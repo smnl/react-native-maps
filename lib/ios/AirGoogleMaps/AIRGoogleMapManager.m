@@ -698,13 +698,14 @@ RCT_EXPORT_METHOD(setIndoorActiveLevelIndex:(nonnull NSNumber *)reactTag
   });
 }
 
-- (void)mapView:(GMSMapView *)mapView
-    didTapPOIWithPlaceID:(NSString *)placeID
-                    name:(NSString *)name
-                location:(CLLocationCoordinate2D)location {
-    AIRGoogleMap *googleMapView = (AIRGoogleMap *)mapView;
-    [googleMapView didTapPOIWithPlaceID:placeID name:name location:location];
-}
+// Modified by SL 2020-07-03 - Disabled POI delegate handler (this blocks regular onPress/didTapAtCoordinate taps on labeled locations/POIs on map)
+// - (void)mapView:(GMSMapView *)mapView
+//     didTapPOIWithPlaceID:(NSString *)placeID
+//                     name:(NSString *)name
+//                 location:(CLLocationCoordinate2D)location {
+//     AIRGoogleMap *googleMapView = (AIRGoogleMap *)mapView;
+//     [googleMapView didTapPOIWithPlaceID:placeID name:name location:location];
+// }
 
 #pragma mark Gesture Recognizer Handlers
 
